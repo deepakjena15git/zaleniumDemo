@@ -13,6 +13,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 
 import com.aventstack.extentreports.testng.listener.ExtentITestListenerAdapter;
+
+
 @Listeners(ExtentITestListenerAdapter.class)
 public class Setup {
 	protected RemoteWebDriver driver;
@@ -29,5 +31,7 @@ public class Setup {
 	}
 	
 	@AfterTest
-	public void teardown() {}
+	public void teardown() {
+		driver.quit();	
+	}
 }
